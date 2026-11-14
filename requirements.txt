@@ -1,0 +1,13 @@
+# Python 3.10 (Pyke needs the `imp` module, removed in Python 3.12)
+# Paper's solvers (Part 1)
+scitools-pyke==1.1.1
+python-constraint==1.4.0
+z3-solver
+nltk
+ply
+func-timeout
+tqdm
+backoff
+# Reimplementation (Part 2)
+janus-swi
+openai>=1.40

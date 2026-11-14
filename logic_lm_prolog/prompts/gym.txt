@@ -1,0 +1,47 @@
+Task Description: You are given a Prolog knowledge base about gym exercises and a question. The task is to translate the question into ONE Prolog goal that answers it when run against the knowledge base.
+Rules:
+1) Use only the predicates listed below.
+2) If the question asks "which" / "what" exercises, name the answer variable X. Use other capital letters (E, M, Q) for helper variables.
+3) If the question is yes/no, do not use the variable X.
+4) Constants are lowercase with underscores (bench_press, pull_up_bar). Use \+ for "not". Write the goal on one line, without "?-" and without a final period.
+Predicates:
+exercise(E) ::: E is an exercise.
+requires_equipment(E, Q) ::: Exercise E requires equipment Q (barbell, dumbbell, dip_station, pull_up_bar, bodyweight).
+targets(E, M) ::: Exercise E targets muscle M (chest, triceps, shoulders, biceps, back, quadriceps, glutes, hamstrings, core).
+compound_exercise(E) ::: E targets two or more different muscles.
+muscle_workout(M, Q, E) ::: Exercise E targets muscle M and uses equipment Q.
+possible_exercises(E, L) ::: Exercise E can be done with some equipment in list L.
+------
+Question:
+Does the push up require a barbell?
+###
+Query:
+requires_equipment(push_up, barbell)
+------
+Question:
+Which exercises target the shoulders?
+###
+Query:
+targets(X, shoulders)
+------
+Question:
+Which exercises need a pull up bar or a dip station?
+###
+Query:
+possible_exercises(X, [pull_up_bar, dip_station])
+------
+Question:
+Which dumbbell exercises target only one muscle?
+###
+Query:
+requires_equipment(X, dumbbell), \+ compound_exercise(X)
+------
+Question:
+Is there a back exercise that uses a barbell?
+###
+Query:
+muscle_workout(back, barbell, E)
+------
+Question:
+[[QUESTION]]
+###

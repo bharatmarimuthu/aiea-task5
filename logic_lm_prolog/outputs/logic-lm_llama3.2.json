@@ -1,0 +1,336 @@
+[
+  {
+    "id": "gym_1",
+    "hops": 1,
+    "question": "Can the plank be done with just bodyweight?",
+    "answer": "true",
+    "predicted_answer": "true",
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "possible_exercises(plank, [bodyweight])",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": true
+  },
+  {
+    "id": "gym_2",
+    "hops": 1,
+    "question": "Does the plank work the chest?",
+    "answer": "false",
+    "predicted_answer": "false",
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "targets(chest, plank)",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": true
+  },
+  {
+    "id": "gym_3",
+    "hops": 2,
+    "question": "Is the bench press a compound exercise?",
+    "answer": "true",
+    "predicted_answer": "true",
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "compound_exercise(bench_press)",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": true
+  },
+  {
+    "id": "gym_4",
+    "hops": 2,
+    "question": "Is the bicep curl a compound exercise?",
+    "answer": "false",
+    "predicted_answer": "false",
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "compound_exercise(bicep_curl)",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": true
+  },
+  {
+    "id": "gym_5",
+    "hops": 1,
+    "question": "Which exercises target the glutes?",
+    "answer": [
+      "air_squat",
+      "barbell_squat",
+      "goblet_squat",
+      "romanian_deadlift",
+      "walking_lunge"
+    ],
+    "predicted_answer": [
+      "air_squat",
+      "barbell_squat",
+      "goblet_squat",
+      "romanian_deadlift",
+      "walking_lunge"
+    ],
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "targets(X, glutes)",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": true
+  },
+  {
+    "id": "gym_6",
+    "hops": 2,
+    "question": "Which exercises work the chest using dumbbells?",
+    "answer": [
+      "dumbbell_flye"
+    ],
+    "predicted_answer": [
+      "dumbbell_flye"
+    ],
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "muscle_workout(chest, dumbbell, X)",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": true
+  },
+  {
+    "id": "gym_7",
+    "hops": 2,
+    "question": "If I only have dumbbells and my bodyweight, which exercises can I do?",
+    "answer": [
+      "air_squat",
+      "bicep_curl",
+      "dumbbell_flye",
+      "goblet_squat",
+      "plank",
+      "push_up",
+      "walking_lunge"
+    ],
+    "predicted_answer": [
+      "air_squat",
+      "bicep_curl",
+      "dumbbell_flye",
+      "goblet_squat",
+      "plank",
+      "push_up",
+      "walking_lunge"
+    ],
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "possible_exercises(X, [dumbbell, bodyweight])",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": true
+  },
+  {
+    "id": "gym_8",
+    "hops": 2,
+    "question": "Which exercises are compound exercises?",
+    "answer": [
+      "air_squat",
+      "barbell_squat",
+      "bench_press",
+      "goblet_squat",
+      "overhead_press",
+      "pull_up",
+      "push_up",
+      "romanian_deadlift",
+      "tricep_dip",
+      "walking_lunge"
+    ],
+    "predicted_answer": [
+      "air_squat",
+      "barbell_squat",
+      "bench_press",
+      "goblet_squat",
+      "overhead_press",
+      "pull_up",
+      "push_up",
+      "romanian_deadlift",
+      "tricep_dip",
+      "walking_lunge"
+    ],
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "compound_exercise(X)",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": true
+  },
+  {
+    "id": "gym_9",
+    "hops": 2,
+    "question": "Which barbell exercises hit the triceps?",
+    "answer": [
+      "bench_press",
+      "overhead_press"
+    ],
+    "predicted_answer": [
+      "bench_press",
+      "overhead_press"
+    ],
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "targets(X, triceps), requires_equipment(X, barbell)",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": true
+  },
+  {
+    "id": "gym_10",
+    "hops": 3,
+    "question": "Which compound exercises can I do with no equipment other than my bodyweight?",
+    "answer": [
+      "air_squat",
+      "push_up"
+    ],
+    "predicted_answer": [],
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "possible_exercises(X, [])",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": false
+  },
+  {
+    "id": "gym_11",
+    "hops": 2,
+    "question": "Which exercises train both the quadriceps and the glutes?",
+    "answer": [
+      "air_squat",
+      "barbell_squat",
+      "goblet_squat",
+      "walking_lunge"
+    ],
+    "predicted_answer": [],
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "targets(X, quadriceps), targets(X, glutes), \\+ compound_exercise(X)",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": false
+  },
+  {
+    "id": "gym_12",
+    "hops": 3,
+    "question": "Is there a hamstring exercise that does not need a barbell?",
+    "answer": "false",
+    "predicted_answer": [],
+    "flag": "success",
+    "refine_rounds": 1,
+    "history": [
+      {
+        "round": 0,
+        "goal": "muscle_workout(hamstrings, _, E), requires_equipment(E, barbell), \\+ E",
+        "flag": "execution error",
+        "error": "procedure romanian_deadlift/0 does not exist"
+      },
+      {
+        "round": 1,
+        "goal": "possible_exercises(hamstrings, X), requires_equipment(X, barbell), \\+ X",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": false
+  },
+  {
+    "id": "gym_13",
+    "hops": 3,
+    "question": "Which exercises that don't use a barbell work the shoulders or the triceps?",
+    "answer": [
+      "push_up",
+      "tricep_dip"
+    ],
+    "predicted_answer": [
+      "bench_press",
+      "overhead_press",
+      "push_up",
+      "tricep_dip"
+    ],
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "possible_exercises(X, [dumbbell, bodyweight]), targets(X, shoulders) ; targets(X, triceps)",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": false
+  },
+  {
+    "id": "gym_14",
+    "hops": 3,
+    "question": "Is there any exercise that trains the core and is also a compound exercise?",
+    "answer": "false",
+    "predicted_answer": "false",
+    "flag": "success",
+    "refine_rounds": 0,
+    "history": [
+      {
+        "round": 0,
+        "goal": "targets(core, E), compound_exercise(E)",
+        "flag": "success",
+        "error": ""
+      }
+    ],
+    "correct": true
+  }
+]

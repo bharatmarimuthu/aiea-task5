@@ -1,0 +1,9 @@
+You are given a Prolog knowledge base about gym exercises and a question. Answer the question using only the knowledge base. Do not explain.
+If the question is yes/no, reply exactly "Answer: true" or "Answer: false".
+If the question asks which exercises, reply "Answer: [a, b, c]" using the exact lowercase names from the knowledge base, or "Answer: []" if there are none.
+
+Knowledge base:
+[[KB]]
+
+Question:
+[[QUESTION]]

@@ -1,0 +1,16 @@
+[
+  {"id": "gym_1", "hops": 1, "question": "Can the plank be done with just bodyweight?", "gold_query": "requires_equipment(plank, bodyweight)"},
+  {"id": "gym_2", "hops": 1, "question": "Does the plank work the chest?", "gold_query": "targets(plank, chest)"},
+  {"id": "gym_3", "hops": 2, "question": "Is the bench press a compound exercise?", "gold_query": "compound_exercise(bench_press)"},
+  {"id": "gym_4", "hops": 2, "question": "Is the bicep curl a compound exercise?", "gold_query": "compound_exercise(bicep_curl)"},
+  {"id": "gym_5", "hops": 1, "question": "Which exercises target the glutes?", "gold_query": "targets(X, glutes)"},
+  {"id": "gym_6", "hops": 2, "question": "Which exercises work the chest using dumbbells?", "gold_query": "muscle_workout(chest, dumbbell, X)"},
+  {"id": "gym_7", "hops": 2, "question": "If I only have dumbbells and my bodyweight, which exercises can I do?", "gold_query": "possible_exercises(X, [dumbbell, bodyweight])"},
+  {"id": "gym_8", "hops": 2, "question": "Which exercises are compound exercises?", "gold_query": "compound_exercise(X)"},
+  {"id": "gym_9", "hops": 2, "question": "Which barbell exercises hit the triceps?", "gold_query": "muscle_workout(triceps, barbell, X)"},
+  {"id": "gym_10", "hops": 3, "question": "Which compound exercises can I do with no equipment other than my bodyweight?", "gold_query": "compound_exercise(X), requires_equipment(X, bodyweight)"},
+  {"id": "gym_11", "hops": 2, "question": "Which exercises train both the quadriceps and the glutes?", "gold_query": "targets(X, quadriceps), targets(X, glutes)"},
+  {"id": "gym_12", "hops": 3, "question": "Is there a hamstring exercise that does not need a barbell?", "gold_query": "targets(E, hamstrings), \\+ requires_equipment(E, barbell)"},
+  {"id": "gym_13", "hops": 3, "question": "Which exercises that don't use a barbell work the shoulders or the triceps?", "gold_query": "(targets(X, shoulders) ; targets(X, triceps)), \\+ requires_equipment(X, barbell)"},
+  {"id": "gym_14", "hops": 3, "question": "Is there any exercise that trains the core and is also a compound exercise?", "gold_query": "targets(E, core), compound_exercise(E)"}
+]

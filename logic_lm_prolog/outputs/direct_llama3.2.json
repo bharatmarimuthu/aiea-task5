@@ -1,0 +1,215 @@
+[
+  {
+    "id": "gym_1",
+    "hops": 1,
+    "question": "Can the plank be done with just bodyweight?",
+    "answer": "true",
+    "predicted_answer": "true",
+    "raw_output": "Answer: true",
+    "flag": "success",
+    "correct": true
+  },
+  {
+    "id": "gym_2",
+    "hops": 1,
+    "question": "Does the plank work the chest?",
+    "answer": "false",
+    "predicted_answer": "false",
+    "raw_output": "Answer: false",
+    "flag": "success",
+    "correct": true
+  },
+  {
+    "id": "gym_3",
+    "hops": 2,
+    "question": "Is the bench press a compound exercise?",
+    "answer": "true",
+    "predicted_answer": "true",
+    "raw_output": "Answer: true",
+    "flag": "success",
+    "correct": true
+  },
+  {
+    "id": "gym_4",
+    "hops": 2,
+    "question": "Is the bicep curl a compound exercise?",
+    "answer": "false",
+    "predicted_answer": "true",
+    "raw_output": "Answer: true",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_5",
+    "hops": 1,
+    "question": "Which exercises target the glutes?",
+    "answer": [
+      "air_squat",
+      "barbell_squat",
+      "goblet_squat",
+      "romanian_deadlift",
+      "walking_lunge"
+    ],
+    "predicted_answer": [
+      "air_squat",
+      "barbell_squat",
+      "goblet_squat",
+      "romanian_deadlift",
+      "walking_lunge"
+    ],
+    "raw_output": "Answer: [air_squat, barbell_squat, goblet_squat, walking_lunge, romanian_deadlift]",
+    "flag": "success",
+    "correct": true
+  },
+  {
+    "id": "gym_6",
+    "hops": 2,
+    "question": "Which exercises work the chest using dumbbells?",
+    "answer": [
+      "dumbbell_flye"
+    ],
+    "predicted_answer": [
+      "dumbbell_flye"
+    ],
+    "raw_output": "Answer: [dumbbell_flye]",
+    "flag": "success",
+    "correct": true
+  },
+  {
+    "id": "gym_7",
+    "hops": 2,
+    "question": "If I only have dumbbells and my bodyweight, which exercises can I do?",
+    "answer": [
+      "air_squat",
+      "bicep_curl",
+      "dumbbell_flye",
+      "goblet_squat",
+      "plank",
+      "push_up",
+      "walking_lunge"
+    ],
+    "predicted_answer": [
+      "bicep_curl",
+      "dumbbell_flye",
+      "goblet_squat",
+      "walking_lunge"
+    ],
+    "raw_output": "Answer: [dumbbell_flye, bicep_curl, goblet_squat, walking_lunge]",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_8",
+    "hops": 2,
+    "question": "Which exercises are compound exercises?",
+    "answer": [
+      "air_squat",
+      "barbell_squat",
+      "bench_press",
+      "goblet_squat",
+      "overhead_press",
+      "pull_up",
+      "push_up",
+      "romanian_deadlift",
+      "tricep_dip",
+      "walking_lunge"
+    ],
+    "predicted_answer": [
+      "bench_press",
+      "bicep_curl",
+      "tricep_dip"
+    ],
+    "raw_output": "Answer: [bicep_curl, tricep_dip, bench_press]",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_9",
+    "hops": 2,
+    "question": "Which barbell exercises hit the triceps?",
+    "answer": [
+      "bench_press",
+      "overhead_press"
+    ],
+    "predicted_answer": [
+      "barbell_squat",
+      "bench_press"
+    ],
+    "raw_output": "Answer: [bench_press, barbell_squat]",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_10",
+    "hops": 3,
+    "question": "Which compound exercises can I do with no equipment other than my bodyweight?",
+    "answer": [
+      "air_squat",
+      "push_up"
+    ],
+    "predicted_answer": [
+      "air_squat",
+      "plank",
+      "push_up"
+    ],
+    "raw_output": "Answer: [push_up, air_squat, plank]",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_11",
+    "hops": 2,
+    "question": "Which exercises train both the quadriceps and the glutes?",
+    "answer": [
+      "air_squat",
+      "barbell_squat",
+      "goblet_squat",
+      "walking_lunge"
+    ],
+    "predicted_answer": [
+      "air_squat",
+      "barbell_squat",
+      "goblet_squat",
+      "walking_lunge"
+    ],
+    "raw_output": "Answer: [air_squat, barbell_squat, goblet_squat, walking_lunge]",
+    "flag": "success",
+    "correct": true
+  },
+  {
+    "id": "gym_12",
+    "hops": 3,
+    "question": "Is there a hamstring exercise that does not need a barbell?",
+    "answer": "false",
+    "predicted_answer": "true",
+    "raw_output": "Answer: true",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_13",
+    "hops": 3,
+    "question": "Which exercises that don't use a barbell work the shoulders or the triceps?",
+    "answer": [
+      "push_up",
+      "tricep_dip"
+    ],
+    "predicted_answer": [
+      "bench_press",
+      "overhead_press"
+    ],
+    "raw_output": "Answer: [overhead_press, bench_press]",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_14",
+    "hops": 3,
+    "question": "Is there any exercise that trains the core and is also a compound exercise?",
+    "answer": "false",
+    "predicted_answer": "true",
+    "raw_output": "Answer: true",
+    "flag": "success",
+    "correct": false
+  }
+]

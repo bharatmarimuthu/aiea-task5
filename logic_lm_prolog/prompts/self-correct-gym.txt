@@ -1,0 +1,32 @@
+Task: Given a Prolog goal that failed and the error message from SWI-Prolog, output the corrected goal. Use only these predicates: exercise/1, requires_equipment/2, targets/2, compound_exercise/1, muscle_workout/3, possible_exercises/2. Keep the answer variable named X for "which" questions. Write the goal on one line, without "?-" and without a final period.
+------
+>>> Question:
+Which exercises target the biceps?
+>>> Initial Program:
+Query:
+target(X, biceps)
+>>> Error Message:
+procedure target/2 does not exist
+>>> Correct Program:
+Query:
+targets(X, biceps)
+------
+>>> Question:
+Which barbell exercises target the glutes?
+>>> Initial Program:
+Query:
+muscle_workout(glutes barbell, X)
+>>> Error Message:
+syntax error: operator expected
+>>> Correct Program:
+Query:
+muscle_workout(glutes, barbell, X)
+------
+>>> Question:
+[[QUESTION]]
+>>> Initial Program:
+Query:
+[[PROGRAM]]
+>>> Error Message:
+[[ERROR MESSAGE]]
+>>> Correct Program:

@@ -1,0 +1,7 @@
+.env
+**/.env
+__pycache__/
+*.pyc
+.DS_Store
+# the authors' repo is cloned separately (see README, Step 1)
+Logic-LLM/

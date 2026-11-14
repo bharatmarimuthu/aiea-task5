@@ -1,0 +1,219 @@
+[
+  {
+    "id": "gym_1",
+    "hops": 1,
+    "question": "Can the plank be done with just bodyweight?",
+    "answer": "true",
+    "predicted_answer": "true",
+    "raw_output": "targets(plank, core).\nrequires_equipment(plank, bodyweight).\n\nAnswer: true",
+    "flag": "success",
+    "correct": true
+  },
+  {
+    "id": "gym_2",
+    "hops": 1,
+    "question": "Does the plank work the chest?",
+    "answer": "false",
+    "predicted_answer": null,
+    "raw_output": "% find what exercises you can do based on the equipment you have\npossible_exercises(Exercise, AvailableEquipment) :- requires_equipment(Exercise, Equipment), member(Equipment, AvailableEquipment).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(Muscle, Equipment, Exercise) :- targets(Exercise, Muscle), requires_equipment(Exercise, Equipment).\n\n% determine if an exercise is a compound exercise or not\ncompound_exercise(Exercise) :- targets(Exercise, Muscle1), targets(Exercise, Muscle2), Muscle1 \\= Muscle2.\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(chest, _, Exercise) :- targets(Exercise, chest).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(Exercise, _, _) :- targets(Exercise, chest).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(Exercise, Equipment, _) :- requires_equipment(Exercise, Equipment), targets(Exercise, chest).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(Exercise, _, _) :- targets(Exercise, chest).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(Exercise, Equipment, _) :- requires_equipment(Exercise, Equipment), targets(Exercise, chest).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(Exercise, Equipment, _) :- requires_equipment(Exercise, Equipment), targets(Exercise, chest).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(Exercise, Equipment, _) :- requires_equipment(Exercise, Equipment), targets(Exercise, chest).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(Exercise, Equipment, _) :- requires_equipment(Exercise, Equipment), targets(Exercise, chest).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(Exercise, Equipment, _) :- requires_equipment(Exercise, Equipment), targets(Exercise, chest).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(Exercise, Equipment, _) :- requires_equipment(Exercise, Equipment), targets(Exercise, chest).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(Exercise, Equipment, _) :- requires_equipment",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_3",
+    "hops": 2,
+    "question": "Is the bench press a compound exercise?",
+    "answer": "true",
+    "predicted_answer": "true",
+    "raw_output": "% determine if an exercise is a compound exercise or not\ncompound_exercise(Exercise) :- targets(Exercise, Muscle1), targets(Exercise, Muscle2), Muscle1 \\= Muscle2.\n\n% Find the targets of the bench press\ntargets(bench_press, chest).\ntargets(bench_press, triceps).\ntargets(bench_press, shoulders).\n\n% Check if the bench press has two different targets\ncompound_exercise(bench_press).\n\n% Answer: true",
+    "flag": "success",
+    "correct": true
+  },
+  {
+    "id": "gym_4",
+    "hops": 2,
+    "question": "Is the bicep curl a compound exercise?",
+    "answer": "false",
+    "predicted_answer": "true",
+    "raw_output": "compound_exercise(bicep_curl).\n\nAnswer: true",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_5",
+    "hops": 1,
+    "question": "Which exercises target the glutes?",
+    "answer": [
+      "air_squat",
+      "barbell_squat",
+      "goblet_squat",
+      "romanian_deadlift",
+      "walking_lunge"
+    ],
+    "predicted_answer": [
+      "air_squat",
+      "barbell_squat",
+      "goblet_squat",
+      "walking_lunge"
+    ],
+    "raw_output": "targets(air_squat, glutes).\ntargets(barbell_squat, glutes).\ntargets(goblet_squat, glutes).\ntargets(walking_lunge, glutes).\n\nAnswer: [air_squat, barbell_squat, goblet_squat, walking_lunge]",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_6",
+    "hops": 2,
+    "question": "Which exercises work the chest using dumbbells?",
+    "answer": [
+      "dumbbell_flye"
+    ],
+    "predicted_answer": [
+      "dumbbell_flye"
+    ],
+    "raw_output": "targets(dumbbell_flye, chest).\nrequires_equipment(dumbbell_flye, dumbbell).\n\nAnswer: [dumbbell_flye]",
+    "flag": "success",
+    "correct": true
+  },
+  {
+    "id": "gym_7",
+    "hops": 2,
+    "question": "If I only have dumbbells and my bodyweight, which exercises can I do?",
+    "answer": [
+      "air_squat",
+      "bicep_curl",
+      "dumbbell_flye",
+      "goblet_squat",
+      "plank",
+      "push_up",
+      "walking_lunge"
+    ],
+    "predicted_answer": [
+      "air_squat",
+      "bicep_curl",
+      "dumbbell_flye",
+      "goblet_squat",
+      "plank",
+      "push_up",
+      "walking_lunge"
+    ],
+    "raw_output": "possible_exercises(Exercise, AvailableEquipment) :- requires_equipment(Exercise, Equipment), member(Equipment, AvailableEquipment).\n\npossible_exercises(dumbbell_flye, [dumbbell]).\npossible_exercises(bicep_curl, [dumbbell]).\npossible_exercises(goblet_squat, [dumbbell]).\npossible_exercises(walking_lunge, [dumbbell]).\n\npossible_exercises(push_up, [bodyweight]).\npossible_exercises(air_squat, [bodyweight]).\npossible_exercises(plank, [bodyweight]).\n\nAnswer: [dumbbell_flye, bicep_curl, goblet_squat, walking_lunge, push_up, air_squat, plank]",
+    "flag": "success",
+    "correct": true
+  },
+  {
+    "id": "gym_8",
+    "hops": 2,
+    "question": "Which exercises are compound exercises?",
+    "answer": [
+      "air_squat",
+      "barbell_squat",
+      "bench_press",
+      "goblet_squat",
+      "overhead_press",
+      "pull_up",
+      "push_up",
+      "romanian_deadlift",
+      "tricep_dip",
+      "walking_lunge"
+    ],
+    "predicted_answer": [
+      "air_squat",
+      "barbell_squat",
+      "bench_press",
+      "goblet_squat",
+      "pull_up",
+      "push_up",
+      "romanian_deadlift",
+      "tricep_dip",
+      "walking_lunge"
+    ],
+    "raw_output": "compound_exercise(Exercise) :- targets(Exercise, Muscle1), targets(Exercise, Muscle2), Muscle1 \\= Muscle2.\n\npossible_exercises(Exercise, AvailableEquipment) :- requires_equipment(Exercise, Equipment), member(Equipment, AvailableEquipment).\n\ncompound_exercise(bench_press).\ncompound_exercise(tricep_dip).\ncompound_exercise(pull_up).\ncompound_exercise(push_up).\ncompound_exercise(air_squat).\ncompound_exercise(barbell_squat).\ncompound_exercise(romanian_deadlift).\ncompound_exercise(goblet_squat).\ncompound_exercise(walking_lunge).\n\nAnswer: [bench_press, tricep_dip, pull_up, push_up, air_squat, barbell_squat, romanian_deadlift, goblet_squat, walking_lunge]",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_9",
+    "hops": 2,
+    "question": "Which barbell exercises hit the triceps?",
+    "answer": [
+      "bench_press",
+      "overhead_press"
+    ],
+    "predicted_answer": [
+      "barbell_squat",
+      "romanian_deadlift"
+    ],
+    "raw_output": "targets(barbell_squat, triceps).\ntargets(romanian_deadlift, triceps).\n\nAnswer: [barbell_squat, romanian_deadlift]",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_10",
+    "hops": 3,
+    "question": "Which compound exercises can I do with no equipment other than my bodyweight?",
+    "answer": [
+      "air_squat",
+      "push_up"
+    ],
+    "predicted_answer": [
+      "air_squat",
+      "plank",
+      "push_up"
+    ],
+    "raw_output": "targets(Exercise, Muscle1), targets(Exercise, Muscle2), Muscle1 \\= Muscle2.\n\npossible_exercises(Exercise, AvailableEquipment) :- requires_equipment(Exercise, Equipment), member(Equipment, AvailableEquipment).\n\ntargets(push_up, chest).\ntargets(push_up, triceps).\n\ntargets(air_squat, quadriceps).\ntargets(air_squat, glutes).\n\ntargets(plank, core).\n\ntargets(push_up, chest).\ntargets(push_up, triceps).\n\ntargets(air_squat, quadriceps).\ntargets(air_squat, glutes).\n\ntargets(plank, core).\n\nAnswer: [air_squat, plank, push_up]",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_11",
+    "hops": 2,
+    "question": "Which exercises train both the quadriceps and the glutes?",
+    "answer": [
+      "air_squat",
+      "barbell_squat",
+      "goblet_squat",
+      "walking_lunge"
+    ],
+    "predicted_answer": [
+      "barbell_squat",
+      "goblet_squat",
+      "walking_lunge"
+    ],
+    "raw_output": "targets(barbell_squat, quadriceps).\ntargets(barbell_squat, glutes).\n\ntargets(goblet_squat, quadriceps).\ntargets(goblet_squat, glutes).\n\ntargets(walking_lunge, quadriceps).\ntargets(walking_lunge, glutes).\n\nAnswer: [barbell_squat, goblet_squat, walking_lunge]",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_12",
+    "hops": 3,
+    "question": "Is there a hamstring exercise that does not need a barbell?",
+    "answer": "false",
+    "predicted_answer": null,
+    "raw_output": "% find what exercises you can do based on the equipment you have\npossible_exercises(Exercise, AvailableEquipment) :- requires_equipment(Exercise, Equipment), member(Equipment, AvailableEquipment).\n\n% determine if an exercise is a compound exercise or not\ncompound_exercise(Exercise) :- targets(Exercise, Muscle1), targets(Exercise, Muscle2), Muscle1 \\= Muscle2.\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(Muscle, Equipment, Exercise) :- targets(Exercise, Muscle), requires_equipment(Exercise, Equipment).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(hamstrings, _, Exercise) :- requires_equipment(Exercise, _), member(_, [barbell, dumbbell]).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(hamstrings, _, Exercise) :- requires_equipment(Exercise, dumbbell).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(hamstrings, _, Exercise) :- requires_equipment(Exercise, barbell).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(hamstrings, _, Exercise) :- requires_equipment(Exercise, _).\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(hamstrings, _, Exercise) :- Exercise = romanian_deadlift.\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(hamstrings, _, Exercise) :- Exercise = goblet_squat.\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(hamstrings, _, Exercise) :- Exercise = walking_lunge.\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(hamstrings, _, Exercise) :- Exercise = barbell_squat.\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(hamstrings, _, Exercise) :- Exercise = dumbbell_flye.\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(hamstrings, _, Exercise) :- Exercise = overhead_press.\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_workout(hamstrings, _, Exercise) :- Exercise = bench_press.\n\n% find an exercise that targets a specific muscle group using specific equipment\nmuscle_work",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_13",
+    "hops": 3,
+    "question": "Which exercises that don't use a barbell work the shoulders or the triceps?",
+    "answer": [
+      "push_up",
+      "tricep_dip"
+    ],
+    "predicted_answer": null,
+    "raw_output": "% Find exercises that target shoulders or triceps\nshoulder_or_triceps(Exercise) :- targets(Exercise, Shoulder), \\+ requires_equipment(Exercise, barbell).\nshoulder_or_triceps(Exercise) :- targets(Exercise, Triceps), \\+ requires_equipment(Exercise, barbell).\n\n% Find exercises that don't use a barbell\nno_barbell_exercise(Exercise) :- \\+ requires_equipment(Exercise, barbell).\n\n% Find exercises that target shoulders or triceps and don't use a barbell\nexercises_no_barbell(ExerciseList) :- no_barbell_exercise(Exercise), shoulder_or_triceps(Exercise), member(Exercise, ExerciseList).\n\n% Find exercises that target shoulders or triceps and don't use a barbell\nexercises_no_barbell([Exercise]) :- no_barbell_exercise(Exercise), shoulder_or_triceps(Exercise).\n\n% Find exercises that target shoulders or triceps and don't use a barbell\nexercises_no_barbell([]) :- true.\n\n% Find exercises that target shoulders or triceps and don't use a barbell\nexercises_no_barbell([Exercise]) :- no_barbell_exercise(Exercise), shoulder_or_triceps(Exercise).\n\n% Find exercises that target shoulders or triceps and don't use a barbell\nexercises_no_barbell([Exercise]) :- no_barbell_exercise(Exercise), shoulder_or_triceps(Exercise).\n\n% Find exercises that target shoulders or triceps and don't use a barbell\nexercises_no_barbell([Exercise]) :- no_barbell_exercise(Exercise), shoulder_or_triceps(Exercise).\n\n% Find exercises that target shoulders or triceps and don't use a barbell\nexercises_no_barbell([Exercise]) :- no_barbell_exercise(Exercise), shoulder_or_triceps(Exercise).\n\n% Find exercises that target shoulders or triceps and don't use a barbell\nexercises_no_barbell([Exercise]) :- no_barbell_exercise(Exercise), shoulder_or_triceps(Exercise).\n\n% Find exercises that target shoulders or triceps and don't use a barbell\nexercises_no_barbell([Exercise]) :- no_barbell_exercise(Exercise), shoulder_or_triceps(Exercise).\n\n% Find exercises that target shoulders or triceps and don't use a barbell\nexercises_no_barbell([Exercise]) :- no_barbell_exercise(Exercise), shoulder_or_triceps(Exercise).\n\n% Find exercises that target shoulders or triceps and don't use a",
+    "flag": "success",
+    "correct": false
+  },
+  {
+    "id": "gym_14",
+    "hops": 3,
+    "question": "Is there any exercise that trains the core and is also a compound exercise?",
+    "answer": "false",
+    "predicted_answer": null,
+    "raw_output": "% Find exercises that target the core\ncore_exercises :-\n    targets(Exercise, core),\n    compound_exercise(Exercise).\n\n% Find compound exercises that target the core\ncompound_core_exercises :-\n    core_exercises,\n    compound_exercise(Exercise),\n    \\+ Exercise = core.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if there are any compound exercises that target the core\ncompound_core_exercises.\n\n% Check if",
+    "flag": "success",
+    "correct": false
+  }
+]
