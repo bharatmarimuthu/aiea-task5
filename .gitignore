@@ -5,3 +5,5 @@ __pycache__/
 .DS_Store
 # the authors' repo is cloned separately (see README, Step 1)
 Logic-LLM/
+# local session notes
+HANDOFF.md
